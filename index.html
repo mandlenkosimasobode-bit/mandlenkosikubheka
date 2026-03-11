@@ -568,22 +568,26 @@
             }
         }
 
+        /* Professional Skills - Fixed for mobile */
         .circular-skills {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            gap: 20px;
             width: 100%;
         }
 
         .circular-skill {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .circle {
             position: relative;
             width: 120px;
             height: 120px;
-            margin: 0 auto 15px;
+            margin: 0 auto 10px;
         }
 
         .circle svg {
@@ -617,6 +621,13 @@
             font-size: 20px;
             font-weight: 600;
             color: var(--main-color);
+        }
+
+        .circular-skill > span {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-top: 5px;
+            font-weight: 500;
         }
 
         /* Skills Grid for Additional Skills */
@@ -1326,17 +1337,22 @@
                 font-size: 12px;
             }
 
+            /* Professional Skills mobile fixes */
             .circular-skills {
-                gap: 20px;
+                gap: 15px;
             }
-
+            
             .circle {
                 width: 100px;
                 height: 100px;
             }
-
+            
             .circle-text {
                 font-size: 18px;
+            }
+            
+            .circular-skill > span {
+                font-size: 13px;
             }
 
             .services-container {
@@ -1484,6 +1500,27 @@
                 font-size: 11px;
             }
 
+            /* Professional Skills mobile fixes */
+            .circular-skills {
+                gap: 20px;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .circle {
+                width: 110px;
+                height: 110px;
+            }
+            
+            .circle-text {
+                font-size: 18px;
+            }
+            
+            .circular-skill > span {
+                font-size: 13px;
+                white-space: nowrap;
+            }
+
             .skill-badge {
                 font-size: 9px;
                 padding: 2px 8px;
@@ -1553,6 +1590,23 @@
             }
         }
 
+        @media (max-width: 380px) {
+            .circular-skills {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .circle {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .circular-skill > span {
+                font-size: 14px;
+                white-space: normal;
+            }
+        }
+
         @media (max-width: 360px) {
             .home-img {
                 width: 220px;
@@ -1581,15 +1635,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .circular-skills {
-                grid-template-columns: 1fr;
-            }
-
-            .circle {
-                width: 120px;
-                height: 120px;
-            }
-
             .project-box {
                 height: 200px;
             }
@@ -1604,6 +1649,13 @@
                 width: 35px;
                 height: 35px;
                 font-size: 18px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .circle {
+                width: 110px;
+                height: 110px;
             }
         }
 
@@ -1873,7 +1925,7 @@
                 <div class="circular-skills">
                     <div class="circular-skill">
                         <div class="circle">
-                            <svg width="120" height="120">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
                                 <circle class="circle-bg" cx="60" cy="60" r="45"></circle>
                                 <circle class="circle-progress" cx="60" cy="60" r="45" data-percent="90"></circle>
                             </svg>
@@ -1883,7 +1935,7 @@
                     </div>
                     <div class="circular-skill">
                         <div class="circle">
-                            <svg width="120" height="120">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
                                 <circle class="circle-bg" cx="60" cy="60" r="45"></circle>
                                 <circle class="circle-progress" cx="60" cy="60" r="45" data-percent="85"></circle>
                             </svg>
@@ -1893,7 +1945,7 @@
                     </div>
                     <div class="circular-skill">
                         <div class="circle">
-                            <svg width="120" height="120">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
                                 <circle class="circle-bg" cx="60" cy="60" r="45"></circle>
                                 <circle class="circle-progress" cx="60" cy="60" r="45" data-percent="95"></circle>
                             </svg>
@@ -1903,7 +1955,7 @@
                     </div>
                     <div class="circular-skill">
                         <div class="circle">
-                            <svg width="120" height="120">
+                            <svg width="120" height="120" viewBox="0 0 120 120">
                                 <circle class="circle-bg" cx="60" cy="60" r="45"></circle>
                                 <circle class="circle-progress" cx="60" cy="60" r="45" data-percent="90"></circle>
                             </svg>
