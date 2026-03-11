@@ -614,7 +614,7 @@
             white-space: nowrap;
         }
 
-        /* Timeline Section with Vertical Line */
+        /* Timeline Section with Vertical Line - FIXED */
         .timeline {
             padding: 100px 10%;
         }
@@ -648,17 +648,26 @@
             border: 1px solid rgba(0, 240, 255, 0.2);
             transition: 0.3s;
             position: relative;
-            width: calc(50% - 30px);
+            width: calc(50% - 40px);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
         }
 
-        /* Alternate left and right positioning */
-        .timeline-item:nth-child(odd) {
-            margin-right: 50%;
+        .timeline-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Left side items */
+        .timeline-item.left {
+            margin-right: auto;
             margin-left: 0;
         }
 
-        .timeline-item:nth-child(even) {
-            margin-left: 50%;
+        /* Right side items */
+        .timeline-item.right {
+            margin-left: auto;
             margin-right: 0;
         }
 
@@ -676,12 +685,12 @@
             z-index: 2;
         }
 
-        .timeline-item:nth-child(odd)::before {
-            right: -38px;
+        .timeline-item.left::before {
+            right: -48px;
         }
 
-        .timeline-item:nth-child(even)::before {
-            left: -38px;
+        .timeline-item.right::before {
+            left: -48px;
         }
 
         .timeline-item:hover {
@@ -1092,13 +1101,13 @@
             }
             
             .timeline-item {
-                width: calc(100% - 60px);
-                margin-left: 60px !important;
+                width: calc(100% - 70px);
+                margin-left: 70px !important;
                 margin-right: 0 !important;
             }
             
-            .timeline-item:nth-child(odd)::before,
-            .timeline-item:nth-child(even)::before {
+            .timeline-item.left::before,
+            .timeline-item.right::before {
                 left: -38px;
                 right: auto;
             }
@@ -1181,13 +1190,13 @@
             }
             
             .timeline-item {
-                width: calc(100% - 50px);
-                margin-left: 50px !important;
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
                 padding: 20px;
             }
             
-            .timeline-item:nth-child(odd)::before,
-            .timeline-item:nth-child(even)::before {
+            .timeline-item.left::before,
+            .timeline-item.right::before {
                 left: -32px;
                 width: 14px;
                 height: 14px;
@@ -1321,13 +1330,13 @@
             }
             
             .timeline-item {
-                width: calc(100% - 40px);
-                margin-left: 40px !important;
+                width: calc(100% - 50px);
+                margin-left: 50px !important;
                 padding: 15px;
             }
             
-            .timeline-item:nth-child(odd)::before,
-            .timeline-item:nth-child(even)::before {
+            .timeline-item.left::before,
+            .timeline-item.right::before {
                 left: -27px;
                 width: 12px;
                 height: 12px;
@@ -1348,43 +1357,6 @@
             .course-badge {
                 font-size: 9px;
                 padding: 2px 6px;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .home-img {
-                width: 200px;
-                height: 200px;
-            }
-
-            .img-box {
-                width: 180px;
-                height: 180px;
-            }
-
-            .about-img {
-                width: 180px;
-                height: 180px;
-            }
-
-            .home-content h1 {
-                font-size: 24px;
-            }
-
-            .typing-text {
-                font-size: 16px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-box {
-                height: 180px;
-            }
-
-            .badge {
-                font-size: 8px;
             }
         }
     </style>
@@ -1658,16 +1630,17 @@
         </div>
     </section>
 
-    <!-- Timeline Section -->
+    <!-- Timeline Section - with alternating left/right -->
     <section class="timeline" id="timeline">
         <h2 class="heading">My <span>Timeline</span></h2>
         <div class="timeline-container">
-            <div class="timeline-item">
+            <div class="timeline-item left">
                 <div class="timeline-date">Jan 2009 - Nov 2013</div>
                 <h3>National Senior Certificate</h3>
                 <p>Kenneth Masekela Secondary School</p>
             </div>
-            <div class="timeline-item">
+            
+            <div class="timeline-item right">
                 <div class="timeline-date">Feb 2015 - Jan 2019</div>
                 <h3>Information Technology and Computer Science NCV Level 2-4</h3>
                 <p>Ekurhuleni East TVET College</p>
@@ -1687,22 +1660,26 @@
                     <span class="course-badge">Networking</span>
                 </div>
             </div>
-            <div class="timeline-item">
+            
+            <div class="timeline-item left">
                 <div class="timeline-date">2018</div>
                 <h3>Introduction to Packet Tracer Certificate</h3>
                 <p>Cisco Networking Academy</p>
             </div>
-            <div class="timeline-item">
+            
+            <div class="timeline-item right">
                 <div class="timeline-date">2018</div>
                 <h3>Industrial Health & Safety with Basic Electrical</h3>
                 <p>National Artisan Training Academy</p>
             </div>
-            <div class="timeline-item">
+            
+            <div class="timeline-item left">
                 <div class="timeline-date">May 2019</div>
                 <h3>Arduino Programming Certificate</h3>
                 <p>Resolution Circle</p>
             </div>
-            <div class="timeline-item">
+            
+            <div class="timeline-item right">
                 <div class="timeline-date">Jul 2019 - Jul 2020</div>
                 <h3>Big Data Technology and Application</h3>
                 <p>Chongqing Industry Polytechnic College</p>
@@ -1713,27 +1690,32 @@
                     <span class="course-badge">Data Scraping</span>
                 </div>
             </div>
-            <div class="timeline-item">
+            
+            <div class="timeline-item left">
                 <div class="timeline-date">2019</div>
                 <h3>World Skills South Africa Competitor</h3>
                 <p>Represented province in IT Network Administration</p>
             </div>
-            <div class="timeline-item">
+            
+            <div class="timeline-item right">
                 <div class="timeline-date">2019</div>
                 <h3>BRICS Skills Competition - Bronze Medal</h3>
                 <p>Represented South Africa in China</p>
             </div>
-            <div class="timeline-item">
+            
+            <div class="timeline-item left">
                 <div class="timeline-date">2021 - 2022</div>
                 <h3>IT Support Learnership at Mustek Limited</h3>
                 <p>Assembling desktop machines, all in one machines, gaming machines</p>
             </div>
-            <div class="timeline-item">
+            
+            <div class="timeline-item right">
                 <div class="timeline-date">2022</div>
                 <h3>Technical Support at Mecer Inter-ed</h3>
                 <p>Quality control and rework on 3500+ notebooks</p>
             </div>
-            <div class="timeline-item">
+            
+            <div class="timeline-item left">
                 <div class="timeline-date">Feb 2025 - Feb 2026</div>
                 <h3>Higher Certificate in Mathematics and Statistics</h3>
                 <p>University of South Africa (UNISA)</p>
@@ -1749,17 +1731,20 @@
                     <span class="course-badge">STA1507</span>
                 </div>
             </div>
-            <div class="timeline-item">
+            
+            <div class="timeline-item right">
                 <div class="timeline-date">2023 - 2024</div>
                 <h3>IT Technician at Mustek Limited</h3>
                 <p>Assembling desktop machines, all in one machines, mini pcs</p>
             </div>
-            <div class="timeline-item">
+            
+            <div class="timeline-item left">
                 <div class="timeline-date">2024 - Present</div>
                 <h3>IT Technician - Server Specialist at Mustek Limited</h3>
                 <p>Server assembly and testing for Lenovo and Mecer brands</p>
             </div>
-            <div class="timeline-item">
+            
+            <div class="timeline-item right">
                 <div class="timeline-date">2023-2025</div>
                 <h3>CompTIA Certifications</h3>
                 <p>Earned A+, Security+, and Server+ certifications</p>
@@ -2009,21 +1994,16 @@
 
         // Timeline Animation
         const timelineItems = document.querySelectorAll('.timeline-item');
-        timelineItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(30px)';
-            item.style.transition = 'all 0.5s ease';
-        });
 
         function animateTimeline() {
             timelineItems.forEach(item => {
                 const rect = item.getBoundingClientRect();
                 if (rect.top < window.innerHeight - 100) {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
+                    item.classList.add('show');
                 }
             });
         }
+        
         window.addEventListener('scroll', animateTimeline);
         window.addEventListener('load', animateTimeline);
 
