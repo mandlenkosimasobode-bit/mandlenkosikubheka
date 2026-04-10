@@ -317,7 +317,11 @@
         .about-img {
             position: relative;
             width: 350px;
-            height: 350px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
         }
 
         .about-img::before {
@@ -332,7 +336,7 @@
 
         .about-img .img-box {
             width: 100%;
-            height: 100%;
+            height: 350px;
         }
 
         .about-content {
@@ -360,6 +364,41 @@
             line-height: 1.8;
             color: #8892b0;
             margin-bottom: 20px;
+        }
+
+        /* Document Download Buttons */
+        .doc-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .doc-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: var(--bg-color);
+            border: 2px solid var(--main-color);
+            border-radius: 40px;
+            color: var(--main-color);
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .doc-btn i {
+            font-size: 18px;
+        }
+
+        .doc-btn:hover {
+            background: var(--main-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 20px var(--main-color);
+            transform: translateY(-3px);
         }
 
         /* Services Section */
@@ -614,7 +653,7 @@
             white-space: nowrap;
         }
 
-        /* Timeline Section with Vertical Line - FIXED */
+        /* Timeline Section */
         .timeline {
             padding: 100px 10%;
         }
@@ -626,7 +665,6 @@
             padding: 20px 0;
         }
 
-        /* Vertical line */
         .timeline-container::after {
             content: '';
             position: absolute;
@@ -659,19 +697,16 @@
             transform: translateY(0);
         }
 
-        /* Left side items */
         .timeline-item.left {
             margin-right: auto;
             margin-left: 0;
         }
 
-        /* Right side items */
         .timeline-item.right {
             margin-left: auto;
             margin-right: 0;
         }
 
-        /* Connection dots on the line */
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -985,6 +1020,41 @@
             box-shadow: 0 0 30px var(--main-color);
         }
 
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: 0.5s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-circle {
+            width: 80px;
+            height: 80px;
+            border: 4px solid transparent;
+            border-top-color: var(--main-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 20px var(--main-color);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         /* Responsive Design */
         @media (max-width: 1200px) {
             .header {
@@ -1078,6 +1148,11 @@
 
             .about-img {
                 width: 280px;
+                height: auto;
+            }
+
+            .about-img .img-box {
+                width: 280px;
                 height: 280px;
             }
 
@@ -1095,7 +1170,6 @@
                 gap: 40px;
             }
 
-            /* Timeline mobile adjustments */
             .timeline-container::after {
                 left: 30px;
             }
@@ -1184,7 +1258,16 @@
                 padding: 25px;
             }
 
-            /* Timeline mobile adjustments */
+            .doc-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .doc-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
             .timeline-container::after {
                 left: 25px;
             }
@@ -1215,6 +1298,10 @@
             }
 
             .about-img {
+                width: 230px;
+            }
+
+            .about-img .img-box {
                 width: 230px;
                 height: 230px;
             }
@@ -1324,7 +1411,6 @@
                 right: 20px;
             }
 
-            /* Timeline mobile adjustments */
             .timeline-container::after {
                 left: 20px;
             }
@@ -1359,52 +1445,14 @@
                 padding: 2px 6px;
             }
         }
-     /* Loading Animation */
-    .loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--bg-color);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 10000;
-        transition: 0.5s;
-    }
-
-        .loader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-    .loader-circle {
-        width: 80px;
-        height: 80px;
-        border: 4px solid transparent;
-        border-top-color: var(--main-color);
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        box-shadow: 0 0 20px var(--main-color);
-    }
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
     </style>
 </head>
 <body>
-<!-- Loader HTML -->
-<div class="loader" id="loader">
-    <div class="loader-circle"></div>
-</div>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-circle"></div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <a href="#" class="logo">Portfo<span>lio.</span></a>
@@ -1427,11 +1475,11 @@
             <h1>Mandlenkosi Emmanuel <span>Kubheka</span></h1>
             <h3>And I'm a <span class="typing-text" id="typing"></span></h3>
             <p>IT Technician at Mustek Limited specializing in desktop and server servicing, testing, and repairs. In my current role, 
-                I complete repairs per day, maintain a rework rate below 2% , and consistently achieve SLA compliance above 90% . My broader technical
+                I complete repairs per day, maintain a rework rate below 2%, and consistently achieve SLA compliance above 90%. My broader technical
                 expertise includes server assembly, hardware testing, and network administration. I hold a Higher Certificate in Information Technology & 
-                Computer Science NCV Level 4, and a Higher Certificate in Mathematics and Statistics (NQF Level 5) , complemented by certifications in Big Data,
+                Computer Science NCV Level 4, and a Higher Certificate in Mathematics and Statistics (NQF Level 5), complemented by certifications in Big Data,
                 Arduino, Cisco Packet Tracer, Industrial Health & Safety, Basic Electrical, CompTIA A+, CompTIA S+ and CompTIA Server+.
-</p>
+            </p>
             <div class="social-media">
                 <a href="https://web.facebook.com/MandleJessus/photos_by" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://x.com/MandleJessus" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
@@ -1447,22 +1495,31 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section with Document Download Icons -->
     <section class="about" id="about">
         <div class="about-img">
             <div class="img-box">
                 <img src="computer hardware and software.jpg" alt="About Me">
+            </div>
+            <!-- Document Download Icons Below Picture -->
+            <div class="doc-buttons">
+                <a href="Mandlenkosi_Emmanuel_Kubheka_CV.pdf" class="doc-btn" download>
+                    <i class="fas fa-file-alt"></i> Download CV
+                </a>
+                <a href="Mandlenkosi_Emmanuel_Kubheka_CoverLetter.pdf" class="doc-btn" download>
+                    <i class="fas fa-envelope-open-text"></i> Download Cover Letter
+                </a>
             </div>
         </div>
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
             <h3>IT Technician</h3>
             <p>I am an IT professional at Mustek Limited, currently serving as a Technician responsible for servicing, testing, and repairing desktops and servers. 
-                In this role, I complete repairs per day, maintain a rework rate below 2% , and consistently achieve SLA compliance above 90% for repairs within 2 business days.<br>
+                In this role, I complete repairs per day, maintain a rework rate below 2%, and consistently achieve SLA compliance above 90% for repairs within 2 business days.<br>
                 My experience also includes extensive work in server assembly, hardware testing, and network administration.
                 With a Higher Certificate in Mathematics and Statistics and currently pursuing a Bachelor's in Computing at UNISA, I combine practical technical skills with strong analytical capabilities.
                 My educational background includes Information Technology and Computer Science NCV Level 2-4 from Ekurhuleni East TVET College, Big Data Technology and Application from Chongqing Industry Polytechnic College, and multiple certifications in Arduino Programming, Cisco Packet Tracer, and Industrial Health & Safety with Basic Electrical.
-                I hold CompTIA A+ and CompTIA Server+ certifications, with a strong commitment to quality, customer satisfaction, and compliance with OHS and ISO standards</p>
+                I hold CompTIA A+ and CompTIA Server+ certifications, with a strong commitment to quality, customer satisfaction, and compliance with OHS and ISO standards.</p>
             <a href="#contact" class="btn">Let's Talk</a>
         </div>
     </section>
@@ -1514,23 +1571,21 @@
                     <div class="skill-info">
                         <span><i class="fas fa-server" style="color: var(--main-color); margin-right: 8px;"></i>Server Hardware Assembly & Upgrade</span>
                         <span>95%</span>
-                        </div>
-                        <div class="progress-bar">
+                    </div>
+                    <div class="progress-bar">
                         <div class="progress" data-width="95"></div>
                     </div>
-                    </div>
-                    
-                    <div class="skill-bar">
+                </div>
+                <div class="skill-bar">
                     <div class="skill-info">
                         <span><i class="fas fa-network-wired" style="color: var(--main-color); margin-right: 8px;"></i>Desktops & Laptops Upgrades</span>
                         <span>95%</span>
-                        </div>
-                        <div class="progress-bar">
+                    </div>
+                    <div class="progress-bar">
                         <div class="progress" data-width="95"></div>
                     </div>
-                    </div>
-                        
-                    <div class="skill-bar">
+                </div>
+                <div class="skill-bar">
                     <div class="skill-info">
                         <span><i class="fas fa-network-wired" style="color: var(--main-color); margin-right: 8px;"></i>OS & Application Software Installation</span>
                         <span>90%</span>
@@ -1539,7 +1594,6 @@
                         <div class="progress" data-width="90"></div>
                     </div>
                 </div>
-                        
                 <div class="skill-bar">
                     <div class="skill-info">
                         <span><i class="fas fa-microchip" style="color: var(--main-color); margin-right: 8px;"></i>Hardware Testing</span>
@@ -1549,38 +1603,34 @@
                         <div class="progress" data-width="90"></div>
                     </div>
                 </div>
-                        
                 <div class="skill-bar">
-                <div class="skill-info">
+                    <div class="skill-info">
                         <span><i class="fas fa-network-wired" style="color: var(--main-color); margin-right: 8px;"></i>App & Web development</span>
                         <span>75%</span>
-                        </div>
-                        <div class="progress-bar">
+                    </div>
+                    <div class="progress-bar">
                         <div class="progress" data-width="75"></div>
                     </div>
                 </div>
-                    
                 <div class="skill-bar">
                     <div class="skill-info">
                         <span><i class="fas fa-network-wired" style="color: var(--main-color); margin-right: 8px;"></i>Network Configuration</span>
                         <span>65%</span>
-                        </div>
-                        <div class="progress-bar">
+                    </div>
+                    <div class="progress-bar">
                         <div class="progress" data-width="65"></div>
                     </div>
-                    </div>
-                    
-                    <div class="skill-bar">
+                </div>
+                <div class="skill-bar">
                     <div class="skill-info">
                         <span><i class="fas fa-network-wired" style="color: var(--main-color); margin-right: 8px;"></i>Firmware & Chips driver Updates</span>
                         <span>85%</span>
-                        </div>
-                        <div class="progress-bar">
+                    </div>
+                    <div class="progress-bar">
                         <div class="progress" data-width="85"></div>
                     </div>
-                    </div>
-                        
-                    <div class="skill-bar">
+                </div>
+                <div class="skill-bar">
                     <div class="skill-info">
                         <span><i class="fas fa-network-wired" style="color: var(--main-color); margin-right: 8px;"></i>Software Updates</span>
                         <span>85%</span>
@@ -1589,7 +1639,6 @@
                         <div class="progress" data-width="85"></div>
                     </div>
                 </div>
-                        
                 <div class="skill-bar">
                     <div class="skill-info">
                         <span><i class="fab fa-python" style="color: var(--main-color); margin-right: 8px;"></i>Python Programming</span>
@@ -1599,24 +1648,22 @@
                         <div class="progress" data-width="70"></div>
                     </div>
                 </div>
-                
                 <div class="skill-bar">
                     <div class="skill-info">
                         <span><i class="fas fa-chart-bar" style="color: var(--main-color); margin-right: 8px;"></i>Tableau</span>
                         <span>70%</span>
                     </div>
                     <div class="progress-bar">
-                    <div class="progress" data-width="70"></div>
+                        <div class="progress" data-width="70"></div>
                     </div>
                 </div>
-                
                 <div class="skill-bar">
                     <div class="skill-info">
                         <span><i class="fas fa-calculator" style="color: var(--main-color); margin-right: 8px;"></i>Statistics</span>
                         <span>80%</span>
                     </div>
                     <div class="progress-bar">
-                    <div class="progress" data-width="80"></div>
+                        <div class="progress" data-width="80"></div>
                     </div>
                 </div>
             </div>
@@ -1634,7 +1681,6 @@
                         </div>
                         <span>Problem Solving</span>
                     </div>
-                    
                     <div class="circular-skill">
                         <div class="circle">
                             <svg width="120" height="120" viewBox="0 0 120 120">
@@ -1645,7 +1691,6 @@
                         </div>
                         <span>Communication</span>
                     </div>
-                    
                     <div class="circular-skill">
                         <div class="circle">
                             <svg width="120" height="120" viewBox="0 0 120 120">
@@ -1656,7 +1701,6 @@
                         </div>
                         <span>Attention to Detail</span>
                     </div>
-                    
                     <div class="circular-skill">
                         <div class="circle">
                             <svg width="120" height="120" viewBox="0 0 120 120">
@@ -1667,7 +1711,6 @@
                         </div>
                         <span>Teamwork</span>
                     </div>
-                    
                     <div class="circular-skill">
                         <div class="circle">
                             <svg width="120" height="120" viewBox="0 0 120 120">
@@ -1678,8 +1721,6 @@
                         </div>
                         <span>Hands on</span>
                     </div>
-
-                    
                     <div class="circular-skill">
                         <div class="circle">
                             <svg width="120" height="120" viewBox="0 0 120 120">
@@ -1690,8 +1731,6 @@
                         </div>
                         <span>Logical</span>
                     </div>
-
-                   
                     <div class="circular-skill">
                         <div class="circle">
                             <svg width="120" height="120" viewBox="0 0 120 120">
@@ -1702,8 +1741,6 @@
                         </div>
                         <span>Researching</span>
                     </div>
-
-                
                     <div class="circular-skill">
                         <div class="circle">
                             <svg width="120" height="120" viewBox="0 0 120 120">
@@ -1787,7 +1824,7 @@
         </div>
     </section>
 
-    <!-- Timeline Section - with alternating left/right -->
+    <!-- Timeline Section -->
     <section class="timeline" id="timeline">
         <h2 class="heading">My <span>Timeline</span></h2>
         <div class="timeline-container">
@@ -1800,7 +1837,7 @@
             <div class="timeline-item right">
                 <div class="timeline-date">Feb 2015 - Jan 2019</div>
                 <h3>Information Technology and Computer Science NCV Level 2-4</h3>
-                <p>Ekurhuleni East TVET College - Comprehensive IT education focus on Hardware, Networking, System Analysis, Programming and digital circuirts.</p>
+                <p>Ekurhuleni East TVET College - Comprehensive IT education focus on Hardware, Networking, System Analysis, Programming and digital circuits.</p>
                 <div class="course-list">
                     <span class="course-badge">English Level 2 - 4</span>
                     <span class="course-badge">Mathematics Level 2 - 4</span>
@@ -1810,7 +1847,7 @@
                     <span class="course-badge">Introduction to Information Systems Level 2</span>
                     <span class="course-badge">Electronic Controls & Digital Electronics Level 2 - 4</span>
                     <span class="course-badge">System Analysis & Design Level 3 - 4</span>
-                    <span class="course-badge">Princeples of Computer Programming Level 3</span>
+                    <span class="course-badge">Principles of Computer Programming Level 3</span>
                     <span class="course-badge">Computer Hardware and Software Level 3</span>
                     <span class="course-badge">Data Communication and Networking Level 4</span>
                     <span class="course-badge">Computer Programming Level 4</span>
@@ -1834,16 +1871,17 @@
                 <h3>Arduino Programming Certificate</h3>
                 <p>Resolution Circle</p>
             </div>
-             <div class="timeline-item left">
+            
+            <div class="timeline-item left">
                 <div class="timeline-date">2019</div>
                 <h3>World Skills South Africa Competitor</h3>
-                <p>Represented the Gauteng province in IT Network Administration, designing cooperate networks and configuring multi-platform environments</p>
+                <p>Represented the Gauteng province in IT Network Administration, designing corporate networks and configuring multi-platform environments</p>
             </div>
            
             <div class="timeline-item right">
                 <div class="timeline-date">Jul 2019 - Jul 2020</div>
                 <h3>Big Data Technology and Application</h3>
-                <p>Chongqing Industry Polytechnic College - Advanced Studies in Big Data Technology inChina</p>
+                <p>Chongqing Industry Polytechnic College - Advanced Studies in Big Data Technology in China</p>
                 <div class="course-list">
                     <span class="course-badge">Machine Learning</span>
                     <span class="course-badge">Tableau</span>
@@ -1851,6 +1889,7 @@
                     <span class="course-badge">Data Scraping</span>
                 </div>
             </div>
+            
             <div class="timeline-item right">
                 <div class="timeline-date">2019</div>
                 <h3>BRICS Skills Competition - Bronze Medal</h3>
@@ -1868,25 +1907,30 @@
                 <h3>Assembler at Mecer Inter-ed</h3>
                 <p>Assembling machines on the line and also did quality control and rework on 3500+ notebooks</p>
             </div>
-             <div class="timeline-item right">
+            
+            <div class="timeline-item right">
                 <div class="timeline-date">2023 - 2024</div>
                 <h3>IT Technician at Mustek Limited</h3>
                 <p>Assembling desktop machines, all in one machines, mini pcs</p>
             </div>
+            
             <div class="timeline-item left">
                 <div class="timeline-date">2025</div>
                 <h3>Higher Certificate in Mathematics and Statistics</h3>
                 <p>University of South Africa (UNISA)</p>
-    <span class="course-badge">ENG1511 - English Proficiency for University Studies</span>
-    <span class="course-badge">EUP1501 - Ethical Information and Communication Technologies for Development Solutions</span>
-    <span class="course-badge">MAT1501 - Fundamental Mathematics</span><br>
-    <span class="course-badge">MAT1510 - Precalculus Mathematics A</span><br>
-    <span class="course-badge">MAT1511 - Precalculus Mathematics B</span><br>
-    <span class="course-badge">STA1505 - Statistics for Beginners</span><br>
-    <span class="course-badge">QMI1500 - Elementary Quantitative Methods</span><br>
-    <span class="course-badge">STA1506 - Basic Statistical Computing</span><br>
-    <span class="course-badge">STA1507 - Introduction to Research Skills</span>
+                <div class="course-list">
+                    <span class="course-badge">ENG1511 - English Proficiency</span>
+                    <span class="course-badge">EUP1501 - Ethical ICT</span>
+                    <span class="course-badge">MAT1501 - Fundamental Mathematics</span>
+                    <span class="course-badge">MAT1510 - Precalculus A</span>
+                    <span class="course-badge">MAT1511 - Precalculus B</span>
+                    <span class="course-badge">STA1505 - Statistics for Beginners</span>
+                    <span class="course-badge">QMI1500 - Elementary Quantitative Methods</span>
+                    <span class="course-badge">STA1506 - Basic Statistical Computing</span>
+                    <span class="course-badge">STA1507 - Introduction to Research Skills</span>
+                </div>
             </div>
+            
             <div class="timeline-item right">
                 <div class="timeline-date">2023-2025</div>
                 <h3>CompTIA Certifications</h3>
@@ -1896,31 +1940,30 @@
             <div class="timeline-item right">
                 <div class="timeline-date">2024 - 2025</div>
                 <h3>IT Technician - Server Assembling & Testing at Mustek Limited</h3>
-                <p>Server assembly and testing for Lenovo and Mecer brands. Doing BIOS updats for the machines. RAID array deployment on server. Burn-in Testing. Part time site support.</p>
+                <p>Server assembly and testing for Lenovo and Mecer brands. Doing BIOS updates for the machines. RAID array deployment on server. Burn-in Testing. Part time site support.</p>
             </div>
             
             <div class="timeline-item left">
                 <div class="timeline-date">2026 to date</div>
                 <h3>Bachelor of Science in Computing</h3>
                 <p>University of South Africa (UNISA)</p>
-    <span class="course-badge"> COS1501 - Theoretical Computer Science I</span>
-    <span class="course-badge">COS1511 - Introduction to Programming I</span>
-    <span class="course-badge"> COS1512 - Introduction to Programming II</span><br>
-    <span class="course-badge">COS1521 - Computer Systems: Fundamental Concepts</span><br>
-    <span class="course-badge">INF1505 - Introduction to Business Information Systems</span><br>
-    <span class="course-badge"> MAT1503 - Linear Algebra I</span><br>
-    <span class="course-badge">INF1511 - Visual Programming I</span><br>
-    <span class="course-badge">INF1520 - Human-Computer Interaction I</span><br>
+                <div class="course-list">
+                    <span class="course-badge">COS1501 - Theoretical Computer Science I</span>
+                    <span class="course-badge">COS1511 - Introduction to Programming I</span>
+                    <span class="course-badge">COS1512 - Introduction to Programming II</span>
+                    <span class="course-badge">COS1521 - Computer Systems: Fundamental Concepts</span>
+                    <span class="course-badge">INF1505 - Introduction to Business Information Systems</span>
+                    <span class="course-badge">MAT1503 - Linear Algebra I</span>
+                    <span class="course-badge">INF1511 - Visual Programming I</span>
+                    <span class="course-badge">INF1520 - Human-Computer Interaction I</span>
+                </div>
             </div>
-        </div>  
-         <div class="timeline-item right">
+            
+            <div class="timeline-item right">
                 <div class="timeline-date">2026 - Present</div>
                 <h3>IT Technician - Desktop & Server Repairs at Mustek Limited</h3>
-                <p><span>Service, test, and repair desktops and servers, completing repairs daily within SLA (2 business days, 90%+ compliance).</span><br>
-                    <span>Maintain rework rate below 2% and keep CMDB system updated every 2 days.</span><br>
-                    <span>Ensure compliance with OHS, PPE, ISO standards, and housekeeping protocols.</span><br>
-                    <span>Provide technical customer support and install OS/software as required.</span>
-                </p>
+                <p>Service, test, and repair desktops and servers, completing repairs daily within SLA (2 business days, 90%+ compliance). Maintain rework rate below 2% and keep CMDB system updated every 2 days. Ensure compliance with OHS, PPE, ISO standards, and housekeeping protocols. Provide technical customer support and install OS/software as required.</p>
+            </div>
         </div>
     </section>
 
@@ -1940,7 +1983,7 @@
                 <img src="computer diagnosis.jpg" alt="PC Assembly">
                 <div class="project-layer">
                     <h4>PC Assembly & Testing</h4>
-                    <p>Professional desktop computer assembly with precise cable management and comprehensive testing protocols.y</p>
+                    <p>Professional desktop computer assembly with precise cable management and comprehensive testing protocols.</p>
                     <a href="#"><i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
@@ -2188,12 +2231,19 @@
             }
         });
 
-    // Loader - Hide after page loads
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            document.getElementById('loader').classList.add('hidden');
-        }, 1000);
-    });
+        // Loader - Hide after page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Contact Form Submit
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
     </script>
 </body>
 </html>
