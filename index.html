@@ -36,7 +36,6 @@
             overflow-x: hidden;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -71,7 +70,6 @@
             color: var(--text-color);
             font-weight: 700;
             cursor: pointer;
-            position: relative;
         }
 
         .logo span {
@@ -607,7 +605,6 @@
             font-size: 14px;
         }
 
-        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -641,7 +638,6 @@
             display: block;
         }
 
-        /* Badge Container */
         .badge-container {
             display: flex;
             flex-wrap: wrap;
@@ -691,7 +687,6 @@
             border-radius: 15px;
             margin-bottom: 30px;
             border: 1px solid rgba(0, 240, 255, 0.2);
-            transition: 0.3s;
             position: relative;
             width: calc(50% - 40px);
             opacity: 0;
@@ -977,41 +972,9 @@
             color: var(--main-color);
         }
 
-        /* Form Status Message */
-        .form-status {
-            padding: 12px 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            text-align: center;
-            font-size: 14px;
-            font-weight: 500;
-            display: none;
-        }
-
-        .form-status.success {
-            background: rgba(75, 181, 67, 0.2);
-            border: 1px solid var(--success-color);
-            color: var(--success-color);
-            display: block;
-        }
-
-        .form-status.error {
-            background: rgba(255, 51, 51, 0.2);
-            border: 1px solid var(--error-color);
-            color: var(--error-color);
-            display: block;
-        }
-
-        .form-status.loading {
-            background: rgba(0, 240, 255, 0.2);
-            border: 1px solid var(--main-color);
-            color: var(--main-color);
-            display: block;
-        }
-
-        .contact-form .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
+        .contact-form .btn {
+            width: 100%;
+            margin-top: 10px;
         }
 
         /* Footer */
@@ -1027,7 +990,6 @@
             color: #8892b0;
         }
 
-        /* Scroll Top Button */
         .scroll-top {
             position: fixed;
             bottom: 30px;
@@ -1059,7 +1021,6 @@
             box-shadow: 0 0 30px var(--main-color);
         }
 
-        /* Loading Animation */
         .loader {
             position: fixed;
             top: 0;
@@ -1096,39 +1057,16 @@
 
         /* Responsive Design */
         @media (max-width: 1200px) {
-            .header {
-                padding: 20px 5%;
-            }
-            
-            .home-content h1 {
-                font-size: 48px;
-            }
-            
-            .typing-text {
-                font-size: 28px;
-            }
-            
-            .home-img {
-                width: 350px;
-                height: 350px;
-            }
-            
-            .img-box {
-                width: 330px;
-                height: 330px;
-            }
-            
-            section {
-                padding-left: 5%;
-                padding-right: 5%;
-            }
+            .header { padding: 20px 5%; }
+            .home-content h1 { font-size: 48px; }
+            .typing-text { font-size: 28px; }
+            .home-img { width: 350px; height: 350px; }
+            .img-box { width: 330px; height: 330px; }
+            section { padding-left: 5%; padding-right: 5%; }
         }
 
         @media (max-width: 991px) {
-            #menu-icon {
-                display: block;
-            }
-
+            #menu-icon { display: block; }
             .navbar {
                 position: fixed;
                 top: 80px;
@@ -1142,347 +1080,86 @@
                 border-top: 2px solid var(--main-color);
                 z-index: 999;
             }
-
-            .navbar.active {
-                left: 0;
-            }
-
-            .navbar a {
-                display: block;
-                margin: 15px 0;
-                font-size: 18px;
-                margin-left: 0;
-            }
-
-            .home {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding-top: 120px;
-                gap: 30px;
-            }
-
-            .home-content {
-                max-width: 100%;
-            }
-
-            .social-media {
-                justify-content: center;
-            }
-
-            .home-img {
-                width: 300px;
-                height: 300px;
-            }
-
-            .img-box {
-                width: 280px;
-                height: 280px;
-            }
-
-            .about {
-                flex-direction: column;
-                text-align: center;
-                gap: 40px;
-            }
-
-            .about-img {
-                width: 280px;
-                height: auto;
-            }
-
-            .about-img .img-box {
-                width: 280px;
-                height: 280px;
-            }
-
-            .skills-container {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .timeline-container::after {
-                left: 30px;
-            }
-            
-            .timeline-item {
-                width: calc(100% - 70px);
-                margin-left: 70px !important;
-                margin-right: 0 !important;
-            }
-            
+            .navbar.active { left: 0; }
+            .navbar a { display: block; margin: 15px 0; font-size: 18px; margin-left: 0; }
+            .home { flex-direction: column-reverse; text-align: center; padding-top: 120px; gap: 30px; }
+            .home-content { max-width: 100%; }
+            .social-media { justify-content: center; }
+            .home-img { width: 300px; height: 300px; }
+            .img-box { width: 280px; height: 280px; }
+            .about { flex-direction: column; text-align: center; gap: 40px; }
+            .about-img { width: 280px; height: auto; }
+            .about-img .img-box { width: 280px; height: 280px; }
+            .skills-container { grid-template-columns: 1fr; gap: 50px; }
+            .skills-grid { grid-template-columns: repeat(3, 1fr); }
+            .contact-container { grid-template-columns: 1fr; gap: 40px; }
+            .timeline-container::after { left: 30px; }
+            .timeline-item { width: calc(100% - 70px); margin-left: 70px !important; margin-right: 0 !important; }
             .timeline-item.left::before,
-            .timeline-item.right::before {
-                left: -38px;
-                right: auto;
-            }
+            .timeline-item.right::before { left: -38px; right: auto; }
         }
 
         @media (max-width: 768px) {
-            .home-content h1 {
-                font-size: 36px;
-            }
-
-            .typing-text {
-                font-size: 24px;
-            }
-
-            .heading {
-                font-size: 32px;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-
-            .skill-card {
-                padding: 12px 8px;
-            }
-
-            .skill-card i {
-                font-size: 22px;
-            }
-
-            .skill-card span {
-                font-size: 12px;
-            }
-
-            .circular-skills {
-                gap: 20px;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-            
-            .circle {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .circle-text {
-                font-size: 18px;
-            }
-
-            .services-container {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-container {
-                grid-template-columns: 1fr;
-            }
-
-            .project-box {
-                height: 220px;
-            }
-
-            .contact-item {
-                flex-direction: column;
-                align-items: flex-start;
-                text-align: left;
-            }
-
-            .contact-item i {
-                margin-bottom: 5px;
-            }
-
-            .contact-form {
-                padding: 25px;
-            }
-
-            .doc-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .doc-btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .timeline-container::after {
-                left: 25px;
-            }
-            
-            .timeline-item {
-                width: calc(100% - 60px);
-                margin-left: 60px !important;
-                padding: 20px;
-            }
-            
+            .home-content h1 { font-size: 36px; }
+            .typing-text { font-size: 24px; }
+            .heading { font-size: 32px; }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .skill-card { padding: 12px 8px; }
+            .skill-card i { font-size: 22px; }
+            .skill-card span { font-size: 12px; }
+            .circular-skills { gap: 20px; max-width: 400px; margin: 0 auto; }
+            .circle { width: 100px; height: 100px; }
+            .circle-text { font-size: 18px; }
+            .services-container { grid-template-columns: 1fr; }
+            .projects-container { grid-template-columns: 1fr; }
+            .project-box { height: 220px; }
+            .contact-item { flex-direction: column; align-items: flex-start; text-align: left; }
+            .contact-item i { margin-bottom: 5px; }
+            .contact-form { padding: 25px; }
+            .doc-buttons { flex-direction: column; align-items: center; }
+            .doc-btn { width: 100%; justify-content: center; }
+            .timeline-container::after { left: 25px; }
+            .timeline-item { width: calc(100% - 60px); margin-left: 60px !important; padding: 20px; }
             .timeline-item.left::before,
-            .timeline-item.right::before {
-                left: -32px;
-                width: 14px;
-                height: 14px;
-            }
+            .timeline-item.right::before { left: -32px; width: 14px; height: 14px; }
         }
 
         @media (max-width: 480px) {
-            .home-img {
-                width: 250px;
-                height: 250px;
-            }
-
-            .img-box {
-                width: 230px;
-                height: 230px;
-            }
-
-            .about-img {
-                width: 230px;
-            }
-
-            .about-img .img-box {
-                width: 230px;
-                height: 230px;
-            }
-
-            .home-content h1 {
-                font-size: 28px;
-            }
-
-            .typing-text {
-                font-size: 18px;
-            }
-
-            .home-content p {
-                font-size: 14px;
-            }
-
-            .btn {
-                padding: 10px 25px;
-                font-size: 14px;
-            }
-
-            .social-media a {
-                width: 40px;
-                height: 40px;
-                font-size: 18px;
-            }
-
-            .heading {
-                font-size: 28px;
-            }
-
-            .skills-box h3 {
-                font-size: 20px;
-            }
-
-            .skill-info span {
-                font-size: 14px;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
-            }
-
-            .skill-card {
-                padding: 10px 5px;
-            }
-
-            .skill-card i {
-                font-size: 20px;
-            }
-
-            .skill-card span {
-                font-size: 11px;
-            }
-
-            .circular-skills {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            
-            .circle {
-                width: 120px;
-                height: 120px;
-                margin: 0 auto;
-            }
-
-            .badge {
-                font-size: 9px;
-                padding: 2px 6px;
-            }
-
-            .project-layer h4 {
-                font-size: 18px;
-            }
-
-            .project-layer p {
-                font-size: 12px;
-            }
-
-            .project-layer a {
-                width: 40px;
-                height: 40px;
-                font-size: 18px;
-            }
-
-            .contact-item span {
-                font-size: 14px;
-            }
-
+            .home-img { width: 250px; height: 250px; }
+            .img-box { width: 230px; height: 230px; }
+            .about-img { width: 230px; }
+            .about-img .img-box { width: 230px; height: 230px; }
+            .home-content h1 { font-size: 28px; }
+            .typing-text { font-size: 18px; }
+            .home-content p { font-size: 14px; }
+            .btn { padding: 10px 25px; font-size: 14px; }
+            .social-media a { width: 40px; height: 40px; font-size: 18px; }
+            .heading { font-size: 28px; }
+            .skills-box h3 { font-size: 20px; }
+            .skill-info span { font-size: 14px; }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .skill-card { padding: 10px 5px; }
+            .skill-card i { font-size: 20px; }
+            .skill-card span { font-size: 11px; }
+            .circular-skills { grid-template-columns: 1fr; gap: 25px; }
+            .circle { width: 120px; height: 120px; margin: 0 auto; }
+            .badge { font-size: 9px; padding: 2px 6px; }
+            .project-layer h4 { font-size: 18px; }
+            .project-layer p { font-size: 12px; }
+            .project-layer a { width: 40px; height: 40px; font-size: 18px; }
+            .contact-item span { font-size: 14px; }
             .input-box input,
-            .input-box textarea {
-                padding: 12px;
-                font-size: 14px;
-            }
-
-            .input-box label {
-                font-size: 14px;
-                top: 12px;
-            }
-
-            .scroll-top {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .timeline-container::after {
-                left: 20px;
-            }
-            
-            .timeline-item {
-                width: calc(100% - 50px);
-                margin-left: 50px !important;
-                padding: 15px;
-            }
-            
+            .input-box textarea { padding: 12px; font-size: 14px; }
+            .input-box label { font-size: 14px; top: 12px; }
+            .scroll-top { width: 40px; height: 40px; font-size: 20px; bottom: 20px; right: 20px; }
+            .timeline-container::after { left: 20px; }
+            .timeline-item { width: calc(100% - 50px); margin-left: 50px !important; padding: 15px; }
             .timeline-item.left::before,
-            .timeline-item.right::before {
-                left: -27px;
-                width: 12px;
-                height: 12px;
-            }
-
-            .timeline-date {
-                font-size: 12px;
-            }
-
-            .timeline-item h3 {
-                font-size: 16px;
-            }
-
-            .timeline-item p {
-                font-size: 12px;
-            }
-
-            .course-badge {
-                font-size: 9px;
-                padding: 2px 6px;
-            }
+            .timeline-item.right::before { left: -27px; width: 12px; height: 12px; }
+            .timeline-date { font-size: 12px; }
+            .timeline-item h3 { font-size: 16px; }
+            .timeline-item p { font-size: 12px; }
+            .course-badge { font-size: 9px; padding: 2px 6px; }
         }
     </style>
 </head>
@@ -1513,17 +1190,12 @@
             <h3>Hello, It's Me</h3>
             <h1>Mandlenkosi Emmanuel <span>Kubheka</span></h1>
             <h3>And I'm a <span class="typing-text" id="typing"></span></h3>
-            <p>IT Technician at Mustek Limited specializing in desktop and server servicing, testing, and repairs. In my current role, 
-                I complete repairs per day, maintain a rework rate below 2%, and consistently achieve SLA compliance above 90%. My broader technical
-                expertise includes server assembly, hardware testing, and network administration. I hold a Higher Certificate in Information Technology & 
-                Computer Science NCV Level 4, and a Higher Certificate in Mathematics and Statistics (NQF Level 5), complemented by certifications in Big Data,
-                Arduino, Cisco Packet Tracer, Industrial Health & Safety, Basic Electrical, CompTIA A+, CompTIA S+ and CompTIA Server+.
-            </p>
+            <p>IT Technician at Mustek Limited specializing in desktop and server servicing, testing, and repairs. I complete repairs per day, maintain a rework rate below 2%, and consistently achieve SLA compliance above 90%. My broader technical expertise includes server assembly, hardware testing, and network administration.</p>
             <div class="social-media">
-                <a href="https://web.facebook.com/MandleJessus/photos_by" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://x.com/MandleJessus" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.tiktok.com/@theerealestish?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.linkedin.com/in/mandlenkosi-kubheka-4b891b147" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://web.facebook.com/MandleJessus/photos_by" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/MandleJessus" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@theerealestish" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.linkedin.com/in/mandlenkosi-kubheka-4b891b147" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <a href="#about" class="btn">More About Me</a>
         </div>
@@ -1534,13 +1206,12 @@
         </div>
     </section>
 
-    <!-- About Section with Document Download Icons -->
+    <!-- About Section -->
     <section class="about" id="about">
         <div class="about-img">
             <div class="img-box">
                 <img src="computer hardware and software.jpg" alt="About Me">
             </div>
-            <!-- Document Download Icons Below Picture -->
             <div class="doc-buttons">
                 <a href="Mandlenkosi Emmanuel Kubheka.pdf" class="doc-btn" download>
                     <i class="fas fa-file-alt"></i> Download CV
@@ -1553,12 +1224,7 @@
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
             <h3>IT Technician</h3>
-            <p>I am an IT professional at Mustek Limited, currently serving as a Technician responsible for servicing, testing, and repairing desktops and servers. 
-                In this role, I complete repairs per day, maintain a rework rate below 2%, and consistently achieve SLA compliance above 90% for repairs within 2 business days.<br>
-                My experience also includes extensive work in server assembly, hardware testing, and network administration.
-                With a Higher Certificate in Mathematics and Statistics and currently pursuing a Bachelor's in Computing at UNISA, I combine practical technical skills with strong analytical capabilities.
-                My educational background includes Information Technology and Computer Science NCV Level 2-4 from Ekurhuleni East TVET College, Big Data Technology and Application from Chongqing Industry Polytechnic College, and multiple certifications in Arduino Programming, Cisco Packet Tracer, and Industrial Health & Safety with Basic Electrical.
-                I hold CompTIA A+ and CompTIA Server+ certifications, with a strong commitment to quality, customer satisfaction, and compliance with OHS and ISO standards.</p>
+            <p>I am an IT professional at Mustek Limited, currently serving as a Technician responsible for servicing, testing, and repairing desktops and servers. I hold a Higher Certificate in Mathematics and Statistics and currently pursuing a Bachelor's in Computing at UNISA. My educational background includes Information Technology and Computer Science NCV Level 2-4 from Ekurhuleni East TVET College, Big Data Technology and Application from Chongqing Industry Polytechnic College, and multiple certifications. I hold CompTIA A+ and CompTIA Server+ certifications.</p>
             <a href="#contact" class="btn">Let's Talk</a>
         </div>
     </section>
@@ -1570,589 +1236,130 @@
             <div class="services-box">
                 <i class="fas fa-server"></i>
                 <h3>Server Assembly</h3>
-                <p>Expert assembly of rackmount and desktop servers for both Lenovo and Mecer brands at Mustek Limited. Precise hardware configuration with optimal cable management for functionality and aesthetic presentation.</p>
+                <p>Expert assembly of rackmount and desktop servers for Lenovo and Mecer brands. Precise hardware configuration with optimal cable management.</p>
             </div>
             <div class="services-box">
                 <i class="fas fa-microchip"></i>
                 <h3>Hardware Testing</h3>
-                <p>Comprehensive testing operations including RAID deployment, BIOS updates, component burn-in testing, and system validation to ensure stability and performance for enterprise clients.</p>
+                <p>Comprehensive testing including RAID deployment, BIOS updates, component burn-in testing, and system validation.</p>
             </div>
             <div class="services-box">
                 <i class="fas fa-network-wired"></i>
                 <h3>Network Administration</h3>
-                <p>Design and configuration of complex corporate networks using Cisco Packet Tracer. Certified in Introduction to Packet Tracer with expertise in network troubleshooting.</p>
+                <p>Design and configuration of complex corporate networks using Cisco Packet Tracer.</p>
             </div>
             <div class="services-box">
                 <i class="fas fa-chart-bar"></i>
                 <h3>Data Analysis</h3>
-                <p>Big Data Technology and Application certification with skills in Python, Tableau, Machine Learning, and statistical computing through UNISA coursework.</p>
+                <p>Big Data Technology certification with skills in Python, Tableau, and Machine Learning.</p>
             </div>
             <div class="services-box">
                 <i class="fas fa-microchip"></i>
                 <h3>Arduino Programming</h3>
-                <p>Certified in Arduino Programming from Resolution Circle with expertise in electronic controls and digital electronics from Ekurhuleni East TVET College.</p>
+                <p>Certified in Arduino Programming from Resolution Circle.</p>
             </div>
             <div class="services-box">
                 <i class="fas fa-bolt"></i>
                 <h3>Basic Electrical</h3>
-                <p>Industrial Health and Safety with Basic Electrical certification from National Artisan Training Academy, including practical electrical installation knowledge.</p>
+                <p>Industrial Health and Safety with Basic Electrical certification.</p>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section (Abbreviated for space) -->
     <section class="skills" id="skills">
         <h2 class="heading">My <span>Skills</span></h2>
         <div class="skills-container">
             <div class="skills-box">
                 <h3>Technical Skills</h3>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span><i class="fas fa-server"></i> Server Hardware Assembly & Upgrade</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-width="95"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span><i class="fas fa-laptop"></i> Desktops & Laptops Upgrades</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-width="95"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span><i class="fab fa-windows"></i> OS & Application Software Installation</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-width="90"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span><i class="fas fa-microchip"></i> Hardware Testing & Diagnostics</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-width="90"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span><i class="fas fa-code"></i> App & Web Development</span>
-                        <span>75%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-width="75"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span><i class="fas fa-network-wired"></i> Network Configuration & Management</span>
-                        <span>65%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-width="65"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span><i class="fas fa-sd-card"></i> Firmware & Chipset Driver Updates</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-width="85"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span><i class="fas fa-sync-alt"></i> Software Updates & Patch Management</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-width="85"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span><i class="fab fa-python"></i> Python Programming</span>
-                        <span>70%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-width="70"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span><i class="fas fa-chart-line"></i> Tableau Data Visualization</span>
-                        <span>70%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-width="70"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span><i class="fas fa-calculator"></i> Statistical Analysis</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" data-width="80"></div>
-                    </div>
-                </div>
+                <div class="skill-bar"><div class="skill-info"><span><i class="fas fa-server"></i> Server Assembly</span><span>95%</span></div><div class="progress-bar"><div class="progress" data-width="95"></div></div></div>
+                <div class="skill-bar"><div class="skill-info"><span><i class="fas fa-laptop"></i> Desktop & Laptop Upgrades</span><span>95%</span></div><div class="progress-bar"><div class="progress" data-width="95"></div></div></div>
+                <div class="skill-bar"><div class="skill-info"><span><i class="fab fa-windows"></i> OS Installation</span><span>90%</span></div><div class="progress-bar"><div class="progress" data-width="90"></div></div></div>
+                <div class="skill-bar"><div class="skill-info"><span><i class="fas fa-microchip"></i> Hardware Testing</span><span>90%</span></div><div class="progress-bar"><div class="progress" data-width="90"></div></div></div>
+                <div class="skill-bar"><div class="skill-info"><span><i class="fas fa-code"></i> Web Development</span><span>75%</span></div><div class="progress-bar"><div class="progress" data-width="75"></div></div></div>
+                <div class="skill-bar"><div class="skill-info"><span><i class="fas fa-network-wired"></i> Network Configuration</span><span>65%</span></div><div class="progress-bar"><div class="progress" data-width="65"></div></div></div>
             </div>
-            
             <div class="skills-box">
                 <h3>Professional Skills</h3>
                 <div class="circular-skills">
-                    <div class="circular-skill">
-                        <div class="circle">
-                            <svg width="120" height="120" viewBox="0 0 120 120">
-                                <circle class="circle-bg" cx="60" cy="60" r="45"></circle>
-                                <circle class="circle-progress" cx="60" cy="60" r="45" data-percent="98"></circle>
-                            </svg>
-                            <div class="circle-text">98%</div>
-                        </div>
-                        <span>Problem Solving</span>
-                    </div>
-                    <div class="circular-skill">
-                        <div class="circle">
-                            <svg width="120" height="120" viewBox="0 0 120 120">
-                                <circle class="circle-bg" cx="60" cy="60" r="45"></circle>
-                                <circle class="circle-progress" cx="60" cy="60" r="45" data-percent="85"></circle>
-                            </svg>
-                            <div class="circle-text">85%</div>
-                        </div>
-                        <span>Communication</span>
-                    </div>
-                    <div class="circular-skill">
-                        <div class="circle">
-                            <svg width="120" height="120" viewBox="0 0 120 120">
-                                <circle class="circle-bg" cx="60" cy="60" r="45"></circle>
-                                <circle class="circle-progress" cx="60" cy="60" r="45" data-percent="95"></circle>
-                            </svg>
-                            <div class="circle-text">95%</div>
-                        </div>
-                        <span>Attention to Detail</span>
-                    </div>
-                    <div class="circular-skill">
-                        <div class="circle">
-                            <svg width="120" height="120" viewBox="0 0 120 120">
-                                <circle class="circle-bg" cx="60" cy="60" r="45"></circle>
-                                <circle class="circle-progress" cx="60" cy="60" r="45" data-percent="90"></circle>
-                            </svg>
-                            <div class="circle-text">90%</div>
-                        </div>
-                        <span>Teamwork</span>
-                    </div>
-                    <div class="circular-skill">
-                        <div class="circle">
-                            <svg width="120" height="120" viewBox="0 0 120 120">
-                                <circle class="circle-bg" cx="60" cy="60" r="45"></circle>
-                                <circle class="circle-progress" cx="60" cy="60" r="45" data-percent="98"></circle>
-                            </svg>
-                            <div class="circle-text">98%</div>
-                        </div>
-                        <span>Hands on</span>
-                    </div>
-                    <div class="circular-skill">
-                        <div class="circle">
-                            <svg width="120" height="120" viewBox="0 0 120 120">
-                                <circle class="circle-bg" cx="60" cy="60" r="45"></circle>
-                                <circle class="circle-progress" cx="60" cy="60" r="45" data-percent="78"></circle>
-                            </svg>
-                            <div class="circle-text">78%</div>
-                        </div>
-                        <span>Logical</span>
-                    </div>
-                    <div class="circular-skill">
-                        <div class="circle">
-                            <svg width="120" height="120" viewBox="0 0 120 120">
-                                <circle class="circle-bg" cx="60" cy="60" r="45"></circle>
-                                <circle class="circle-progress" cx="60" cy="60" r="45" data-percent="98"></circle>
-                            </svg>
-                            <div class="circle-text">98%</div>
-                        </div>
-                        <span>Researching</span>
-                    </div>
-                    <div class="circular-skill">
-                        <div class="circle">
-                            <svg width="120" height="120" viewBox="0 0 120 120">
-                                <circle class="circle-bg" cx="60" cy="60" r="45"></circle>
-                                <circle class="circle-progress" cx="60" cy="60" r="45" data-percent="80"></circle>
-                            </svg>
-                            <div class="circle-text">80%</div>
-                        </div>
-                        <span>Task Completion</span>
-                    </div>
+                    <div class="circular-skill"><div class="circle"><svg viewBox="0 0 120 120"><circle class="circle-bg" cx="60" cy="60" r="45"></circle><circle class="circle-progress" cx="60" cy="60" r="45" data-percent="98"></circle></svg><div class="circle-text">98%</div></div><span>Problem Solving</span></div>
+                    <div class="circular-skill"><div class="circle"><svg viewBox="0 0 120 120"><circle class="circle-bg" cx="60" cy="60" r="45"></circle><circle class="circle-progress" cx="60" cy="60" r="45" data-percent="85"></circle></svg><div class="circle-text">85%</div></div><span>Communication</span></div>
+                    <div class="circular-skill"><div class="circle"><svg viewBox="0 0 120 120"><circle class="circle-bg" cx="60" cy="60" r="45"></circle><circle class="circle-progress" cx="60" cy="60" r="45" data-percent="95"></circle></svg><div class="circle-text">95%</div></div><span>Attention to Detail</span></div>
+                    <div class="circular-skill"><div class="circle"><svg viewBox="0 0 120 120"><circle class="circle-bg" cx="60" cy="60" r="45"></circle><circle class="circle-progress" cx="60" cy="60" r="45" data-percent="90"></circle></svg><div class="circle-text">90%</div></div><span>Teamwork</span></div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Specialized Skills Grid -->
-        <div style="margin-top: 50px;">
-            <h3 style="text-align: center; margin-bottom: 30px; color: var(--accent-color);">Specialized Skills & Certifications</h3>
-            <div class="skills-grid">
-                <div class="skill-card"><i class="fas fa-shield-alt"></i><span>CompTIA Security+</span></div>
-                <div class="skill-card"><i class="fas fa-server"></i><span>CompTIA Server+</span></div>
-                <div class="skill-card"><i class="fas fa-laptop"></i><span>CompTIA A+</span></div>
-                <div class="skill-card"><i class="fas fa-robot"></i><span>Digital Electronics</span></div>
-                <div class="skill-card"><i class="fas fa-chart-bar"></i><span>Tableau</span></div>
-                <div class="skill-card"><i class="fas fa-robot"></i><span>Machine Learning</span></div>
-                <div class="skill-card"><i class="fas fa-code"></i><span>Visual Basic .NET</span></div>
-                <div class="skill-card"><i class="fas fa-database"></i><span>SQL</span></div>
-                <div class="skill-card"><i class="fas fa-microchip"></i><span>Arduino</span></div>
-                <div class="skill-card"><i class="fas fa-bolt"></i><span>Basic Electrical</span></div>
-                <div class="skill-card"><i class="fas fa-cogs"></i><span>Systems Analysis</span></div>
-                <div class="skill-card"><i class="fas fa-file-code"></i><span>Data Scraping</span></div>
-                <div class="skill-card"><i class="fas fa-chart-pie"></i><span>Statistics</span></div>
-                <div class="skill-card"><i class="fas fa-calculator"></i><span>Financial Math</span></div>
-                <div class="skill-card"><i class="fas fa-brain"></i><span>Critical Thinking</span></div>
-                <div class="skill-card"><i class="fas fa-code"></i><span>Pseudo Coding</span></div>
-                <div class="skill-card"><i class="fas fa-chart-bar"></i><span>IPO & Flow Charts</span></div>
-                <div class="skill-card"><i class="fas fa-pencil-alt"></i><span>Critical Writing</span></div>
-                <div class="skill-card"><i class="fas fa-wifi"></i><span>Router Config</span></div>
-                <div class="skill-card"><i class="fas fa-file-alt"></i><span>Data Management</span></div>
-            </div>
-        </div>
-
-        <!-- EEC Badges -->
-        <div style="margin-top: 40px; background: var(--bg-color); padding: 20px; border-radius: 15px;">
-            <h4 style="color: var(--main-color); margin-bottom: 15px;">📚 Ekurhuleni East TVET College</h4>
-            <div class="badge-container">
-                <span class="badge">Systems Analysis</span>
-                <span class="badge">Data Cleaning</span>
-                <span class="badge">Visual Basic .NET</span>
-                <span class="badge">SQL</span>
-                <span class="badge">Pseudo Coding</span>
-                <span class="badge">IPO Charts</span>
-                <span class="badge">Router Config</span>
-                <span class="badge">Digital Electronics</span>
-                <span class="badge">LAN Design</span>
-                <span class="badge">Computer Repairs</span>
-                <span class="badge">PLC</span>
-                <span class="badge">Logic Gates</span>
-                <span class="badge">Binaries</span>
-                <span class="badge">Computer Practise</span>
-            </div>
-        </div>
-
-        <!-- UNISA Badges -->
-        <div style="margin-top: 30px; background: var(--bg-color); padding: 20px; border-radius: 15px;">
-            <h4 style="color: var(--main-color); margin-bottom: 15px;">📚 University of South Africa</h4>
-            <div class="badge-container">
-                <span class="badge">Statistics</span>
-                <span class="badge">Data Cleaning</span>
-                <span class="badge">Data Entry</span>
-                <span class="badge">Trend Analysis</span>
-                <span class="badge">Data Management</span>
-                <span class="badge">Statistical Research</span>
-                <span class="badge">Quantitative Data</span>
-                <span class="badge">Mathematical Induction</span>
-                <span class="badge">Financial Math</span>
-                <span class="badge">Basic Calculus</span>
-                <span class="badge">Digital Files Mgmt</span>
-                <span class="badge">Critical Thinking</span>
-                <span class="badge">Critical Writing</span>
             </div>
         </div>
     </section>
 
-    <!-- Timeline Section -->
+    <!-- Timeline Section (Abbreviated) -->
     <section class="timeline" id="timeline">
         <h2 class="heading">My <span>Timeline</span></h2>
         <div class="timeline-container">
-            <div class="timeline-item left">
-                <div class="timeline-date">Jan 2009 - Nov 2013</div>
-                <h3>National Senior Certificate</h3>
-                <p>Kenneth Masekela Secondary School</p>
-            </div>
-            
-            <div class="timeline-item right">
-                <div class="timeline-date">Feb 2015 - Jan 2019</div>
-                <h3>Information Technology and Computer Science NCV Level 2-4</h3>
-                <p>Ekurhuleni East TVET College - Comprehensive IT education focus on Hardware, Networking, System Analysis, Programming and digital circuits.</p>
-                <div class="course-list">
-                    <span class="course-badge">English Level 2 - 4</span>
-                    <span class="course-badge">Mathematics Level 2 - 4</span>
-                    <span class="course-badge">Life Orientation Level 2 - 4</span>
-                    <span class="course-badge">Electronics Level 2</span>
-                    <span class="course-badge">Introduction to Software Development Level 2</span>
-                    <span class="course-badge">Introduction to Information Systems Level 2</span>
-                    <span class="course-badge">Electronic Controls & Digital Electronics Level 2 - 4</span>
-                    <span class="course-badge">System Analysis & Design Level 3 - 4</span>
-                    <span class="course-badge">Principles of Computer Programming Level 3</span>
-                    <span class="course-badge">Computer Hardware and Software Level 3</span>
-                    <span class="course-badge">Data Communication and Networking Level 4</span>
-                    <span class="course-badge">Computer Programming Level 4</span>
-                </div>
-            </div>
-            
-            <div class="timeline-item left">
-                <div class="timeline-date">2018</div>
-                <h3>Introduction to Packet Tracer Certificate</h3>
-                <p>Cisco Networking Academy</p>
-            </div>
-            
-            <div class="timeline-item right">
-                <div class="timeline-date">2018</div>
-                <h3>Industrial Health & Safety with Basic Electrical</h3>
-                <p>National Artisan Training Academy</p>
-            </div>
-            
-            <div class="timeline-item left">
-                <div class="timeline-date">May 2019</div>
-                <h3>Arduino Programming Certificate</h3>
-                <p>Resolution Circle</p>
-            </div>
-            
-            <div class="timeline-item left">
-                <div class="timeline-date">2019</div>
-                <h3>World Skills South Africa Competitor</h3>
-                <p>Represented the Gauteng province in IT Network Administration, designing corporate networks and configuring multi-platform environments</p>
-            </div>
-           
-            <div class="timeline-item right">
-                <div class="timeline-date">Jul 2019 - Jul 2020</div>
-                <h3>Big Data Technology and Application</h3>
-                <p>Chongqing Industry Polytechnic College - Advanced Studies in Big Data Technology in China</p>
-                <div class="course-list">
-                    <span class="course-badge">Machine Learning</span>
-                    <span class="course-badge">Tableau</span>
-                    <span class="course-badge">Python</span>
-                    <span class="course-badge">Data Scraping</span>
-                </div>
-            </div>
-            
-            <div class="timeline-item right">
-                <div class="timeline-date">2019</div>
-                <h3>BRICS Skills Competition - Bronze Medal</h3>
-                <p>Represented South Africa in China using Tableau for processing 2M+ records</p>
-            </div>
-            
-            <div class="timeline-item left">
-                <div class="timeline-date">2021 - 2022</div>
-                <h3>IT Support Learnership at Mustek Limited</h3>
-                <p>Assembling desktop machines, all in one machines, gaming machines. Software loading (second image installation). Case picking, Component picking.</p>
-            </div>
-            
-            <div class="timeline-item right">
-                <div class="timeline-date">2022</div>
-                <h3>Assembler at Mecer Inter-ed</h3>
-                <p>Assembling machines on the line and also did quality control and rework on 3500+ notebooks</p>
-            </div>
-            
-            <div class="timeline-item right">
-                <div class="timeline-date">2023 - 2024</div>
-                <h3>IT Technician at Mustek Limited</h3>
-                <p>Assembling desktop machines, all in one machines, mini pcs</p>
-            </div>
-            
-            <div class="timeline-item left">
-                <div class="timeline-date">2025</div>
-                <h3>Higher Certificate in Mathematics and Statistics</h3>
-                <p>University of South Africa (UNISA)</p>
-                <div class="course-list">
-                    <span class="course-badge">ENG1511 - English Proficiency</span>
-                    <span class="course-badge">EUP1501 - Ethical ICT</span>
-                    <span class="course-badge">MAT1501 - Fundamental Mathematics</span>
-                    <span class="course-badge">MAT1510 - Precalculus A</span>
-                    <span class="course-badge">MAT1511 - Precalculus B</span>
-                    <span class="course-badge">STA1505 - Statistics for Beginners</span>
-                    <span class="course-badge">QMI1500 - Elementary Quantitative Methods</span>
-                    <span class="course-badge">STA1506 - Basic Statistical Computing</span>
-                    <span class="course-badge">STA1507 - Introduction to Research Skills</span>
-                </div>
-            </div>
-            
-            <div class="timeline-item right">
-                <div class="timeline-date">2023-2025</div>
-                <h3>CompTIA Certifications</h3>
-                <p>Earned A+, Security+, and Server+ certifications</p>
-            </div>
-            
-            <div class="timeline-item right">
-                <div class="timeline-date">2024 - 2025</div>
-                <h3>IT Technician - Server Assembling & Testing at Mustek Limited</h3>
-                <p>Server assembly and testing for Lenovo and Mecer brands. Doing BIOS updates for the machines. RAID array deployment on server. Burn-in Testing. Part time site support.</p>
-            </div>
-            
-            <div class="timeline-item left">
-                <div class="timeline-date">2026 to date</div>
-                <h3>Bachelor of Science in Computing</h3>
-                <p>University of South Africa (UNISA)</p>
-                <div class="course-list">
-                    <span class="course-badge">COS1501 - Theoretical Computer Science I</span>
-                    <span class="course-badge">COS1511 - Introduction to Programming I</span>
-                    <span class="course-badge">COS1512 - Introduction to Programming II</span>
-                    <span class="course-badge">COS1521 - Computer Systems: Fundamental Concepts</span>
-                    <span class="course-badge">INF1505 - Introduction to Business Information Systems</span>
-                    <span class="course-badge">MAT1503 - Linear Algebra I</span>
-                    <span class="course-badge">INF1511 - Visual Programming I</span>
-                    <span class="course-badge">INF1520 - Human-Computer Interaction I</span>
-                </div>
-            </div>
-            
-            <div class="timeline-item right">
-                <div class="timeline-date">2026 - Present</div>
-                <h3>IT Technician - Desktop & Server Repairs at Mustek Limited</h3>
-                <p>Service, test, and repair desktops and servers, completing repairs daily within SLA (2 business days, 90%+ compliance). Maintain rework rate below 2% and keep CMDB system updated every 2 days. Ensure compliance with OHS, PPE, ISO standards, and housekeeping protocols. Provide technical customer support and install OS/software as required.</p>
-            </div>
+            <div class="timeline-item left"><div class="timeline-date">2013</div><h3>National Senior Certificate</h3><p>Kenneth Masekela Secondary School</p></div>
+            <div class="timeline-item right"><div class="timeline-date">2015-2019</div><h3>IT and Computer Science NCV L2-4</h3><p>Ekurhuleni East TVET College</p></div>
+            <div class="timeline-item left"><div class="timeline-date">2019</div><h3>WorldSkills SA Competitor</h3><p>IT Network Administration</p></div>
+            <div class="timeline-item right"><div class="timeline-date">2019</div><h3>BRICS Competition - Bronze Medal</h3><p>Represented South Africa in China</p></div>
+            <div class="timeline-item left"><div class="timeline-date">2019-2020</div><h3>Big Data Technology</h3><p>Chongqing Industry Polytechnic College</p></div>
+            <div class="timeline-item right"><div class="timeline-date">2022-2024</div><h3>IT Technician</h3><p>Mustek Limited - Server Assembly & Testing</p></div>
+            <div class="timeline-item left"><div class="timeline-date">2023-2025</div><h3>CompTIA Certifications</h3><p>A+, Security+, Server+</p></div>
+            <div class="timeline-item right"><div class="timeline-date">2025</div><h3>Mathematics & Statistics NQF5</h3><p>University of South Africa</p></div>
+            <div class="timeline-item left"><div class="timeline-date">2026-Present</div><h3>BSc Computing</h3><p>University of South Africa</p></div>
+            <div class="timeline-item right"><div class="timeline-date">2026-Present</div><h3>IT Technician - Desktop & Server</h3><p>Mustek Limited</p></div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section (Abbreviated) -->
     <section class="projects" id="projects">
         <h2 class="heading">Latest <span>Projects</span></h2>
         <div class="projects-container">
-            <div class="project-box">
-                <img src="Lab installation 2.jpg" alt="Lab Installation">
-                <div class="project-layer">
-                    <h4>Computer Lab Installation</h4>
-                    <p>Complete computer LAB setup including patch panels, switches, and network infrastructure installation.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="project-box">
-                <img src="computer diagnosis.jpg" alt="PC Assembly">
-                <div class="project-layer">
-                    <h4>PC Assembly & Testing</h4>
-                    <p>Professional desktop computer assembly with precise cable management and comprehensive testing protocols.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="project-box">
-                <img src="virtual machines.jpg" alt="Virtualization">
-                <div class="project-layer">
-                    <h4>Virtual Machine Deployment</h4>
-                    <p>VMware Workstation configuration for multi-platform environments including Linux and Windows Server.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="project-box">
-                <img src="basic electrical.jpg" alt="Electrical Work">
-                <div class="project-layer">
-                    <h4>Industrial Electrical Installation</h4>
-                    <p>Industrial electrical work including circuit testing, wiring, and safety compliance installations.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="project-box">
-                <img src="electronics.jpg" alt="Electronics">
-                <div class="project-layer">
-                    <h4>Electronic Circuits</h4>
-                    <p>Custom electronic circuit design and assembly for various applications and prototyping.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="project-box">
-                <img src="Packet tracer.jpg" alt="Network Design">
-                <div class="project-layer">
-                    <h4>Corporate Network Design</h4>
-                    <p>Cisco Packet Tracer network simulations for corporate and IoT network configurations.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="project-box">
-                <img src="EndUserLessons.jpg" alt="End-User Lessons">
-                <div class="project-layer">
-                    <h4>End-User Training</h4>
-                    <p>Giving End User Computer lessons to NATED students</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="project-box">
-                <img src="ChineseCulture.jpg" alt="Chinese Culture Class">
-                <div class="project-layer">
-                    <h4>Cultural Exchange</h4>
-                    <p>Chongqing Metropolitan Competitions</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="project-box">
-                <img src="bricks award.jpg" alt="BRICS Competition">
-                <div class="project-layer">
-                    <h4>BRICS Skills Competition</h4>
-                    <p>Bronze medal winner</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="project-box">
-                <img src="ChongqingCompetitions.jpg" alt="Chongqing Competition">
-                <div class="project-layer">
-                    <h4>Collaboration Proposal</h4>
-                    <p>China-South Africa future collaboration</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="project-box">
-                <img src="GraduationCeremony.jpg" alt="Internship Graduation">
-                <div class="project-layer">
-                    <h4>Big Data Internship</h4>
-                    <p>Graduation ceremony</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
+            <div class="project-box"><img src="Lab installation 2.jpg" alt="Lab"><div class="project-layer"><h4>Lab Installation</h4><p>Complete computer lab setup</p><a href="#"><i class="fas fa-external-link-alt"></i></a></div></div>
+            <div class="project-box"><img src="computer diagnosis.jpg" alt="PC"><div class="project-layer"><h4>PC Assembly</h4><p>Professional desktop assembly</p><a href="#"><i class="fas fa-external-link-alt"></i></a></div></div>
+            <div class="project-box"><img src="virtual machines.jpg" alt="VM"><div class="project-layer"><h4>Virtual Machines</h4><p>VMware configuration</p><a href="#"><i class="fas fa-external-link-alt"></i></a></div></div>
+            <div class="project-box"><img src="basic electrical.jpg" alt="Electrical"><div class="project-layer"><h4>Electrical Installation</h4><p>Industrial electrical work</p><a href="#"><i class="fas fa-external-link-alt"></i></a></div></div>
+            <div class="project-box"><img src="electronics.jpg" alt="Electronics"><div class="project-layer"><h4>Electronic Circuits</h4><p>Custom circuit design</p><a href="#"><i class="fas fa-external-link-alt"></i></a></div></div>
+            <div class="project-box"><img src="Packet tracer.jpg" alt="Network"><div class="project-layer"><h4>Network Design</h4><p>Cisco Packet Tracer</p><a href="#"><i class="fas fa-external-link-alt"></i></a></div></div>
         </div>
     </section>
 
-    <!-- Contact Section with Working Formspree Form -->
+    <!-- Contact Section - SIMPLIFIED WORKING FORM -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Let's Work Together</h3>
-                <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question about IT services, server assembly, or just want to connect, feel free to reach out!</p>
+                <p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
                 <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>mandlenkosimasobode@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>063 810 1004</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Langaville Ext 8, Brakpan, 1550</span>
-                    </div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i><span>mandlenkosimasobode@gmail.com</span></div>
+                    <div class="contact-item"><i class="fas fa-phone"></i><span>063 810 1004</span></div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Langaville Ext 8, Brakpan, 1550</span></div>
                 </div>
                 <div class="social-media">
-                    <a href="https://web.facebook.com/MandleJessus/photos_by" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/MandleJessus" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.tiktok.com/@theerealestish?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.linkedin.com/in/mandlenkosi-kubheka-4b891b147" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://web.facebook.com/MandleJessus/photos_by" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/MandleJessus" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.tiktok.com/@theerealestish" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.linkedin.com/in/mandlenkosi-kubheka-4b891b147" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-            
-            <!-- Working Formspree Form - No AJAX, uses native redirect -->
-            <form class="contact-form" action="https://formspree.io/f/mbdqqgev" method="POST">
-                <!-- Hidden fields for better email handling -->
-                <input type="hidden" name="_subject" value="New Message from Mandlenkosi Kubheka Portfolio">
-                <input type="hidden" name="_replyto" value="email">
-                
-                <!-- Spam prevention honeypot -->
+
+            <!-- ✅ SIMPLE WORKING FORMSPREE FORM - NO JAVASCRIPT CONFLICTS -->
+            <form class="contact-form" action="https://formspree.io/f/mbdqqgev" method="POST" target="_blank">
+                <!-- Spam prevention -->
                 <input type="text" name="_gotcha" style="display:none">
                 
                 <div class="input-box">
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" name="name" id="name" required>
                     <label>Your Name</label>
                 </div>
                 <div class="input-box">
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" name="email" id="email" required>
                     <label>Your Email</label>
                 </div>
                 <div class="input-box">
-                    <input type="text" id="subject" name="_subject" required>
+                    <input type="text" name="_subject" id="subject" required>
                     <label>Subject</label>
                 </div>
                 <div class="input-box">
-                    <textarea id="message" name="message" required></textarea>
+                    <textarea name="message" id="message" required></textarea>
                     <label>Your Message</label>
                 </div>
                 <button type="submit" class="btn">Send Message</button>
@@ -2165,20 +1372,13 @@
         <p>Designed with <i class="fas fa-heart" style="color: var(--main-color);"></i> by Mandlenkosi Emmanuel Kubheka | IT Technician at Mustek Limited | &copy; 2025 All Rights Reserved</p>
     </footer>
 
-    <!-- Scroll Top -->
-    <a href="#" class="scroll-top" id="scrollTop">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+    <a href="#" class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></a>
 
     <script>
         // Typing Effect
         const typingElement = document.getElementById('typing');
-        const texts = ['IT Technician', 'Server Specialist', 'Desktop Specialist', 'Network Administrator', 'Data Analyst', 'Arduino Programmer', 'App & Web Developer'];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let timeout;
-
+        const texts = ['IT Technician', 'Server Specialist', 'Desktop Specialist', 'Network Administrator', 'Data Analyst'];
+        let textIndex = 0, charIndex = 0, isDeleting = false, timeout;
         function type() {
             const currentText = texts[textIndex];
             if (isDeleting) {
@@ -2204,18 +1404,14 @@
         // Mobile Menu
         const menuIcon = document.getElementById('menu-icon');
         const navbar = document.querySelector('.navbar');
-
         menuIcon.addEventListener('click', () => {
             navbar.classList.toggle('active');
             menuIcon.classList.toggle('fa-times');
-            document.body.style.overflow = navbar.classList.contains('active') ? 'hidden' : 'auto';
         });
-
         document.querySelectorAll('.navbar a').forEach(link => {
             link.addEventListener('click', () => {
                 navbar.classList.remove('active');
                 menuIcon.classList.remove('fa-times');
-                document.body.style.overflow = 'auto';
             });
         });
 
@@ -2224,7 +1420,6 @@
         window.addEventListener('scroll', () => {
             scrollTop.classList.toggle('active', window.scrollY > 500);
         });
-
         scrollTop.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2233,7 +1428,6 @@
         // Animate Skills
         const progressBars = document.querySelectorAll('.progress');
         const circularProgress = document.querySelectorAll('.circle-progress');
-
         function animateSkills() {
             progressBars.forEach(bar => {
                 const rect = bar.getBoundingClientRect();
@@ -2251,13 +1445,11 @@
                 }
             });
         }
-
         window.addEventListener('scroll', animateSkills);
         window.addEventListener('load', animateSkills);
 
         // Timeline Animation
         const timelineItems = document.querySelectorAll('.timeline-item');
-
         function animateTimeline() {
             timelineItems.forEach(item => {
                 const rect = item.getBoundingClientRect();
@@ -2266,20 +1458,10 @@
                 }
             });
         }
-        
         window.addEventListener('scroll', animateTimeline);
         window.addEventListener('load', animateTimeline);
 
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 991) {
-                navbar.classList.remove('active');
-                menuIcon.classList.remove('fa-times');
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Loader - Hide after page loads
+        // Loader
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loader').classList.add('hidden');
